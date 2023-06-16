@@ -1,0 +1,20 @@
+<div *ngFor="let dev of devs; let index = index">
+  <h3>Developpeur n° {{ index }}</h3>
+  <ul>
+    <li>Last Name : {{ dev.lastName }}</li>
+    <li>First Name : {{ dev.firstName }}</li>
+    <li>Age : {{ dev.age }}</li>
+    <li>Sexe : {{ dev.gender }}</li>
+    <li>Bio : {{ dev.bio }}</li>
+    <li>
+      Skills :
+      <app-skill
+        *ngFor="let skill of dev.skills; let index = index"
+        [name]="skill.name"
+        [logo]="skill.logo"
+        [site]="skill.site"
+        [index]="index"
+      ></app-skill>
+    </li>
+  </ul>
+</div>
